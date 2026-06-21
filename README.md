@@ -5,6 +5,8 @@
 # ENLACE DE LA PAGINA
 https://lucianoperbrest-arch.github.io/PBL-Shop/
 
+**`(Las imagenes de la pagina pueden tardar en aparecer debido a la alta calidad de las mismas).`**
+
 # ENLACE DEL VIDEO TUTORIAL
 https://drive.google.com/drive/folders/1uHS9-OnZJw1O3yIl-_X1VBlcdrrscHWz?usp=sharing
 
@@ -23,14 +25,14 @@ Este repositorio contiene la especificación y el diseño lógico del **Registro
 
 ## 📊 Vista General de la Tabla
 
-La tabla `productos` está conformada por un total de **18 campos**, distribuidos en **5 tipos de datos** principales: `Entero`, `Real`, `Cadena`, `Booleano`, `Fecha` y `Lista` (arreglo).
+La tabla `productos` está conformada por un total de **18 campos**, distribuidos en **5 tipos de datos** principales: `Entero`, `Real`, `Cadena`, `Booleano` y `Lista`.
 
 | Métrica | Detalle |
 | :--- | :--- |
 | **Nombre de la Tabla** | `productos` |
 | **Número Total de Campos** | 18 |
 | **Clave Primaria (PK)** | `producto_id` |
-| **Tipos de Datos Soportados** | Entero, Real, Cadena, Booleano, Fecha, Lista |
+| **Tipos de Datos Soportados** | Entero, Real, Cadena, Booleano |
 
 ---
 
@@ -41,7 +43,7 @@ A continuación se detallan las secciones lógicas que componen la entidad de pr
 ### 🔑 Identificación
 Campos críticos para el control, indexación y unicidad del inventario.
 
-*   **`producto_id`** `[Entero]` `[PK]`: Identificador único autoincremental de cada producto en el sistema.
+*   **`producto_id`** `[Entero]`: Identificador único autoincremental de cada producto en el sistema.
 *   **`sku`** `[Cadena]`: Código alfanumérico único de referencia interna (*Stock Keeping Unit*).  
     *Ejemplo:* `PBL-RPG-0042`
 
