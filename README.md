@@ -5,7 +5,7 @@
 # ENLACE DE LA PAGINA
 https://lucianoperbrest-arch.github.io/PBL-Shop/
 
-**`(Las imagenes de la pagina pueden tardar en aparecer debido a la alta calidad de las mismas).`**
+**`(Las imagenes de la pagina pueden tardar en aparecer debido a que estan embebidas en el HTML y a la alta calidad de las mismas).`**
 
 # ENLACE DEL VIDEO TUTORIAL
 https://drive.google.com/drive/folders/1uHS9-OnZJw1O3yIl-_X1VBlcdrrscHWz?usp=sharing
