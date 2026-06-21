@@ -2,6 +2,12 @@
 ## Actividad Formativa N.° 2: Diseñando un e-Commerce con Inteligencia Artificial
 ### Cátedra: Algoritmos y Estructuras de Datos | ISI - UTN FRRE
 
+# ENLACE DE LA PAGINA
+https://lucianoperbrest-arch.github.io/PBL-Shop/
+
+# ENLACE DEL VIDEO TUTORIAL
+https://drive.google.com/drive/folders/1uHS9-OnZJw1O3yIl-_X1VBlcdrrscHWz?usp=sharing
+
 # Nombre del e-Commerce: PBL Shop
 # Descripcion: 
 PBL Shop es una plataforma de e-commerce temática diseñada para fans de los mundos de fantasía, videojuegos, magia y ficción especulativa. Su propuesta de valor va mucho más allá de una tienda convencional: cada interacción está construida como si el usuario fuera un personaje que ingresa a un universo paralelo para adquirir artefactos, hechizos y reliquias.
@@ -229,12 +235,6 @@ Debe incluir: Diseño oscuro en tonos negro y violeta. Barra de navegación con 
 
 ### Prompt 5: Generación del código 
 Te adjunto un zip con las imagenes creadas. Ahora genera el código completo de la aplicación utilizando HTML y las imágenes para los productos. Requisitos: Diseño similar a una tienda online moderna de fantasía. Tema oscuro con colores negro y violeta. Barra de navegación con logo, buscador y carrito. Banner principal. Categorías de productos. Catálogo de productos mostrando las imágenes generadas. Carrito de compras funcional.
-
-# ENLACE DE LA PAGINA
-https://lucianoperbrest-arch.github.io/PBL-Shop/
-
-# ENLACE DEL VIDEO TUTORIAL
-https://drive.google.com/drive/folders/1uHS9-OnZJw1O3yIl-_X1VBlcdrrscHWz?usp=sharing
 
 # Reflexion
 La incorporación de la Inteligencia Artificial en esta actividad formativa resultó de gran utilidad para vincular los conceptos teóricos de la materia con un caso práctico y creativo. Durante el proceso la herramienta me permitió estructurar de manera lógica el registro principal, facilitando la asignación correcta de los tipos de datos y la correcta eleccion de variables según las necesidades del e-commerce. Asimismo, el intercambio de ideas con la IA fue fundamental para profundizar en el concepto de clave de registro; inicialmente había considerado utilizar el nombre del producto, pero el análisis me demostró que esto generaría duplicaciones y errores en la base de datos. En conclusión, la IA funcionó como un soporte que optimizó los tiempos y mejoró mi comprensión sobre el tema.
