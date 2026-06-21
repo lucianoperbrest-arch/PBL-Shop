@@ -19,11 +19,11 @@ Lo que distingue a PBL Shop no es el inventario, sino la experiencia. El sistema
 
 # Diseño de los Registros
 
-# 🛒 Diccionario de Datos: Tabla `productos` (PBL Shop)
+#  Diccionario de Datos: Tabla `productos` (PBL Shop)
 
 Este repositorio contiene la especificación y el diseño lógico del **Registro Principal de Productos de PBL Shop**. El modelo está preparado para soportar características avanzadas de e-commerce clásico combinadas con elementos narrativos y gamificados de fantasía (*Lore*).
 
-## 📊 Vista General de la Tabla
+##  Vista General de la Tabla
 
 La tabla `productos` está conformada por un total de **18 campos**, distribuidos en **5 tipos de datos** principales: `Entero`, `Real`, `Cadena`, `Booleano` y `Lista`.
 
@@ -36,18 +36,18 @@ La tabla `productos` está conformada por un total de **18 campos**, distribuido
 
 ---
 
-## 📐 Esquema Detallado de Campos
+##  Esquema Detallado de Campos
 
 A continuación se detallan las secciones lógicas que componen la entidad de productos.
 
-### 🔑 Identificación
+###  Identificación
 Campos críticos para el control, indexación y unicidad del inventario.
 
 *   **`producto_id`** `[Entero]`: Identificador único autoincremental de cada producto en el sistema.
 *   **`sku`** `[Cadena]`: Código alfanumérico único de referencia interna (*Stock Keeping Unit*).  
     *Ejemplo:* `PBL-RPG-0042`
 
-### 📝 Descripción del Producto
+###  Descripción del Producto
 Contenido textual enfocado en la conversión comercial y la inmersión del usuario en el universo fantástico.
 
 *   **`nombre`** `[Cadena]`: Nombre comercial del producto.  
@@ -56,7 +56,7 @@ Contenido textual enfocado en la conversión comercial y la inmersión del usuar
 *   **`descripcion_corta`** `[Cadena]`: Resumen breve del producto (máx. 150 caracteres) optimizado para tarjetas de catálogo.
 *   **`descripcion_lore`** `[Cadena]`: Descripción extensa y narrativa del producto redactada en tono fantástico/épico (sin límite de caracteres).
 
-### 🏷️ Clasificación
+###  Clasificación
 Estructura taxonómica para potenciar los módulos de búsqueda, navegación y recomendaciones del sitio.
 
 *   **`categoria`** `[Cadena]`: Categoría principal a la que pertenece el ítem.  
@@ -66,7 +66,7 @@ Estructura taxonómica para potenciar los módulos de búsqueda, navegación y r
 *   **`etiquetas`** `[Lista (Cadenas)]`: Arreglo de palabras clave dinámicas para optimizar búsquedas y filtros internos.  
     *Ejemplo:* `["RPG", "magia", "coleccionable"]`
 
-### 💰 Precio e Inventario
+###  Precio e Inventario
 Datos numéricos de precisión financiera y control logístico en tiempo real.
 
 *   **`precio`** `[Real]`: Precio de venta al público en la moneda local (soporta decimales).  
@@ -74,27 +74,27 @@ Datos numéricos de precisión financiera y control logístico en tiempo real.
 *   **`precio_descuento`** `[Real]`: Precio especial temporal aplicable durante promociones o eventos mágicos de la tienda. Retorna `null` si no hay rebajas activas.
 *   **`stock`** `[Entero]`: Cantidad actual de unidades disponibles en el inventario. Un valor de `0` inhabilita la compra directa indicando producto agotado.
 
-### 🖼️ Multimedia
+###  Multimedia
 Referencias a recursos estáticos almacenados en servidores de medios o CDNs.
 
 *   **`imagen_principal`** `[Cadena]`: URL absoluta o relativa de la imagen destacada del producto.
 *   **`imagenes_extra`** `[Lista (Cadenas)]`: Arreglo de URLs con imágenes adicionales destinado a la galería detallada (soporta hasta 6 fotografías adicionales).
 
-### ⭐ Valoración y Estado
+###  Valoración y Estado
 Metadatos de negocio y rendimiento social del artículo dentro de la plataforma.
 
 *   **`puntuacion_media`** `[Real]`: Promedio de calificaciones otorgadas por los clientes en una escala de `1.0` a `5.0`.
 *   **`activo`** `[Booleano]`: Flag lógico que determina si el producto está visible y apto para ser comprado en el catálogo público (`true`/`false`).
 *   **`es_destacado`** `[Booleano]`: Bandera que marca si el ítem debe ser posicionado en la página de inicio o en banners promocionales de relevancia.
 
-### 🕒 Auditoría
+###  Auditoría
 Campos de control temporal para la trazabilidad de los datos.
 
 *   **`fecha_alta`** `[Fecha]`: Fecha y hora exactas en las que el registro fue ingresado por primera vez en la base de datos (Estructurado bajo el estándar **ISO 8601**).
 
 ---
 
-## 📌 Glosario de Convenciones y Leyenda
+##  Glosario de Convenciones y Leyenda
 
 *   **`PK`**: *Primary Key* (Clave Primaria). Identificador único irrepetible de la tupla.
 *   **`Lista`**: Estructura de datos tipo arreglo que agrupa múltiples valores homogéneos (en este diseño, colecciones de cadenas de texto).
@@ -102,23 +102,23 @@ Campos de control temporal para la trazabilidad de los datos.
 
 # Identificacion y explicacion de la clave
 
-# 🛒 Sistema de Gestión de Catálogo y Base de Datos - PBL Shop
+#  Sistema de Gestión de Catálogo y Base de Datos - PBL Shop
 
 Este repositorio contiene la especificación técnica, el diseño lógico y las reglas de integridad de datos para el **Registro Principal de Productos de PBL Shop**. El modelo combina la robustez de un e-commerce clásico con elementos narrativos y mecánicas gamificadas de fantasía (*Lore*).
 
 ---
 
-## 📊 Vista General de la Tabla `productos`
+##  Vista General de la Tabla `productos`
 
 La tabla principal `productos` está conformada por un total de **18 campos**, distribuidos de manera balanceada en **5 tipos de datos** nativos del motor relacional.
 
-### 📈 Métricas de la Estructura
+###  Métricas de la Estructura
 * **Nombre de la Entidad:** `productos`
 * **Campos Totales:** 18
 * **Clave Primaria (PK):** `producto_id`
 * **Tipos de Datos Utilizados:** Entero (`INT`), Real (`DECIMAL`/`FLOAT`), Cadena (`VARCHAR`), Booleano (`BOOLEAN`), Fecha (`DATETIME`/`TIMESTAMP`) y Lista (Arreglos/JSON).
 
-### 🏷️ Tipos de Datos Soportados
+###  Tipos de Datos Soportados
 * **Entero:** Identificadores y cantidades logísticas.
 * **Real:** Valores monetarios y métricas de rendimiento.
 * **Cadena:** Textos planos, URLs y bloques descriptivos.
@@ -128,17 +128,17 @@ La tabla principal `productos` está conformada por un total de **18 campos**, d
 
 ---
 
-## 📐 Diccionario de Datos Detallado
+##  Diccionario de Datos Detallado
 
 A continuación se presenta la segmentación por capas lógicas de todos los campos estructurados.
 
-### 🔑 Capa A: Identificación
+###  Capa A: Identificación
 Campos de indexación crítica, control único y rastreo de inventario.
 * **`producto_id`** `[Entero]` `[PK]`: Identificador único autoincremental de cada producto en el sistema.
 * **`sku`** `[Cadena]`: Código alfanumérico único de referencia interna (*Stock Keeping Unit*).  
   *Ejemplo de formato:* `PBL-RPG-0042`
 
-### 📝 Capa B: Descripción e Inmersión (*Lore*)
+###  Capa B: Descripción e Inmersión (*Lore*)
 Bloques de texto optimizados para conversión en interfaz de usuario y narrativa fantástica.
 * **`nombre`** `[Cadena]`: Nombre comercial visible en el catálogo de cara al cliente.  
   *Ejemplo:* `"Espada del Cazador Eterno"`
@@ -146,7 +146,7 @@ Bloques de texto optimizados para conversión en interfaz de usuario y narrativa
 * **`descripcion_corta`** `[Cadena]`: Resumen comercial conciso (máximo 150 caracteres) para tarjetas de catálogo y previsualizaciones rápidas.
 * **`descripcion_lore`** `[Cadena]`: Relato extenso e inmersivo en tono épico/fantástico del producto, sin límite de extensión.
 
-### 🏷️ Capa C: Clasificación y Taxonomía
+###  Capa C: Clasificación y Taxonomía
 Campos dinámicos orientados a los módulos de búsqueda, filtrado avanzado y motores de recomendación.
 * **`categoria`** `[Cadena]`: Clasificación macro del producto.  
   *Valores válidos:* `"Figuras"`, `"Ropa"`, `"Videojuegos"`, `"Libros"`, etc.
@@ -155,34 +155,34 @@ Campos dinámicos orientados a los módulos de búsqueda, filtrado avanzado y mo
 * **`etiquetas`** `[Lista (Cadenas)]`: Arreglo de palabras clave para búsquedas internas.  
   *Ejemplo:* `["RPG", "magia", "coleccionable"]`
 
-### 💰 Capa D: Finanzas y Logística
+###  Capa D: Finanzas y Logística
 Datos de precisión numérica y control de inventario en tiempo real.
 * **`precio`** `[Real]`: Precio estándar de venta al público en la moneda local. Soporta el ingreso de posiciones decimales.  
   *Ejemplo:* `2499.99`
 * **`precio_descuento`** `[Real]`: Precio rebajado aplicado durante eventos especiales o campañas flash. Almacena un valor nulo (`null`) si el ítem no tiene un descuento activo.
 * **`stock`** `[Entero]`: Cantidad de unidades físicas disponibles en bodega. El valor `0` inhabilita automáticamente la adición al carrito de compras (Agotado).
 
-### 🖼️ Capa E: Recursos Multimedia
+###  Capa E: Recursos Multimedia
 Rutas y referencias a los servidores estáticos de imágenes o CDNs.
 * **`imagen_principal`** `[Cadena]`: URL absoluta de la fotografía principal del artículo.
 * **`imagenes_extra`** `[Lista (Cadenas)]`: Arreglo o colección de URLs que componen la galería extendida del producto (soporta un límite técnico recomendado de hasta 6 imágenes secundarias).
 
-### ⭐ Capa F: Estado y Rendimiento del Negocio
+###  Capa F: Estado y Rendimiento del Negocio
 Métricas lógicas y relacionales de cara a la plataforma web.
 * **`puntuacion_media`** `[Real]`: Calificación promedio asignada por la comunidad de compradores (en un rango exacto de `1.0` a `5.0`).
 * **`activo`** `[Booleano]`: Estado de visibilidad en producción (`true` para mostrar en la tienda, `false` para ocultar o descontinuar).
 * **`es_destacado`** `[Booleano]`: Flag para empujar el producto directamente a la página de inicio o banners promocionales de alta relevancia.
 
-### 🕒 Capa G: Auditoría interna
+###  Capa G: Auditoría interna
 * **`fecha_alta`** `[Fecha]`: Estampa de tiempo exacta (Fecha y hora) del momento en que se insertó el registro inicial en el sistema.
 
 ---
 
-## 🔑 3. Arquitectura de Clave Primaria
+##  3. Arquitectura de Clave Primaria
 
 El corazón relacional de esta tabla reside en la correcta elección de su clave única. Tras un exhaustivo análisis técnico, se implementó una **clave primaria subrogada** basada en el campo `producto_id`.
 
-### ⚙️ Propiedades Físicas de `producto_id`
+###  Propiedades Físicas de `producto_id`
 * **Tipo nativo:** `INT` (Entero sin signo).
 * **Estrategia de asignación:** `AUTO_INCREMENT` nativo del motor de base de datos.
 * **Restricción de nulidad:** `NOT NULL` estricto.
@@ -190,7 +190,7 @@ El corazón relacional de esta tabla reside en la correcta elección de su clave
 
 ---
 
-## ⚖️ Matriz de Descarte de Candidatas (¿Por qué no otros campos?)
+##  Matriz de Descarte de Candidatas (¿Por qué no otros campos?)
 
 Antes de dictaminar a `producto_id` como la ganadora, se evaluaron otros atributos del modelo, siendo descartados bajo rigurosos criterios arquitectónicos:
 
@@ -202,7 +202,7 @@ Antes de dictaminar a `producto_id` como la ganadora, se evaluaron otros atribut
 
 ---
 
-## 🛠️ Reglas Técnicas y Problemas Evitados
+##  Reglas Técnicas y Problemas Evitados
 
 La arquitectura elegida para la base de datos de PBL Shop cumple estrictamente con las **reglas de oro de un diseño relacional sano**, previniendo de manera nativa los siguientes problemas operativos:
 
@@ -214,7 +214,7 @@ La arquitectura elegida para la base de datos de PBL Shop cumple estrictamente c
 
 ---
 
-## 📌 Glosario de Convenciones técnico-logísticas
+##  Glosario de Convenciones técnico-logísticas
 
 * **`PK` (Primary Key):** Atributo que identifica de manera unívoca a un registro dentro de una base de datos.
 * **`FK` (Foreign Key):** Campo en una tabla que apunta directamente a la Clave Primaria de otra tabla para entablar una relación fuerte.
