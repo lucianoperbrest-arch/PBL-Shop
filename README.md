@@ -32,14 +32,14 @@ La tabla `productos` está conformada por un total de **18 campos**, distribuido
 
 A continuación se detallan las secciones lógicas que componen la entidad de productos.
 
-### 🔑 1. Identificación
+### 🔑 Identificación
 Campos críticos para el control, indexación y unicidad del inventario.
 
 *   **`producto_id`** `[Entero]` `[PK]`: Identificador único autoincremental de cada producto en el sistema.
 *   **`sku`** `[Cadena]`: Código alfanumérico único de referencia interna (*Stock Keeping Unit*).  
     *Ejemplo:* `PBL-RPG-0042`
 
-### 📝 2. Descripción del Producto
+### 📝 Descripción del Producto
 Contenido textual enfocado en la conversión comercial y la inmersión del usuario en el universo fantástico.
 
 *   **`nombre`** `[Cadena]`: Nombre comercial del producto.  
@@ -48,7 +48,7 @@ Contenido textual enfocado en la conversión comercial y la inmersión del usuar
 *   **`descripcion_corta`** `[Cadena]`: Resumen breve del producto (máx. 150 caracteres) optimizado para tarjetas de catálogo.
 *   **`descripcion_lore`** `[Cadena]`: Descripción extensa y narrativa del producto redactada en tono fantástico/épico (sin límite de caracteres).
 
-### 🏷️ 3. Clasificación
+### 🏷️ Clasificación
 Estructura taxonómica para potenciar los módulos de búsqueda, navegación y recomendaciones del sitio.
 
 *   **`categoria`** `[Cadena]`: Categoría principal a la que pertenece el ítem.  
@@ -58,7 +58,7 @@ Estructura taxonómica para potenciar los módulos de búsqueda, navegación y r
 *   **`etiquetas`** `[Lista (Cadenas)]`: Arreglo de palabras clave dinámicas para optimizar búsquedas y filtros internos.  
     *Ejemplo:* `["RPG", "magia", "coleccionable"]`
 
-### 💰 4. Precio e Inventario
+### 💰 Precio e Inventario
 Datos numéricos de precisión financiera y control logístico en tiempo real.
 
 *   **`precio`** `[Real]`: Precio de venta al público en la moneda local (soporta decimales).  
@@ -66,20 +66,20 @@ Datos numéricos de precisión financiera y control logístico en tiempo real.
 *   **`precio_descuento`** `[Real]`: Precio especial temporal aplicable durante promociones o eventos mágicos de la tienda. Retorna `null` si no hay rebajas activas.
 *   **`stock`** `[Entero]`: Cantidad actual de unidades disponibles en el inventario. Un valor de `0` inhabilita la compra directa indicando producto agotado.
 
-### 🖼️ 5. Multimedia
+### 🖼️ Multimedia
 Referencias a recursos estáticos almacenados en servidores de medios o CDNs.
 
 *   **`imagen_principal`** `[Cadena]`: URL absoluta o relativa de la imagen destacada del producto.
 *   **`imagenes_extra`** `[Lista (Cadenas)]`: Arreglo de URLs con imágenes adicionales destinado a la galería detallada (soporta hasta 6 fotografías adicionales).
 
-### ⭐ 6. Valoración y Estado
+### ⭐ Valoración y Estado
 Metadatos de negocio y rendimiento social del artículo dentro de la plataforma.
 
 *   **`puntuacion_media`** `[Real]`: Promedio de calificaciones otorgadas por los clientes en una escala de `1.0` a `5.0`.
 *   **`activo`** `[Booleano]`: Flag lógico que determina si el producto está visible y apto para ser comprado en el catálogo público (`true`/`false`).
 *   **`es_destacado`** `[Booleano]`: Bandera que marca si el ítem debe ser posicionado en la página de inicio o en banners promocionales de relevancia.
 
-### 🕒 7. Auditoría
+### 🕒 Auditoría
 Campos de control temporal para la trazabilidad de los datos.
 
 *   **`fecha_alta`** `[Fecha]`: Fecha y hora exactas en las que el registro fue ingresado por primera vez en la base de datos (Estructurado bajo el estándar **ISO 8601**).
@@ -100,7 +100,7 @@ Este repositorio contiene la especificación técnica, el diseño lógico y las 
 
 ---
 
-## 📊 1. Vista General de la Tabla `productos`
+## 📊 Vista General de la Tabla `productos`
 
 La tabla principal `productos` está conformada por un total de **18 campos**, distribuidos de manera balanceada en **5 tipos de datos** nativos del motor relacional.
 
@@ -120,7 +120,7 @@ La tabla principal `productos` está conformada por un total de **18 campos**, d
 
 ---
 
-## 📐 2. Diccionario de Datos Detallado
+## 📐 Diccionario de Datos Detallado
 
 A continuación se presenta la segmentación por capas lógicas de todos los campos estructurados.
 
@@ -182,7 +182,7 @@ El corazón relacional de esta tabla reside en la correcta elección de su clave
 
 ---
 
-## ⚖️ 4. Matriz de Descarte de Candidatas (¿Por qué no otros campos?)
+## ⚖️ Matriz de Descarte de Candidatas (¿Por qué no otros campos?)
 
 Antes de dictaminar a `producto_id` como la ganadora, se evaluaron otros atributos del modelo, siendo descartados bajo rigurosos criterios arquitectónicos:
 
@@ -194,7 +194,7 @@ Antes de dictaminar a `producto_id` como la ganadora, se evaluaron otros atribut
 
 ---
 
-## 🛠️ 5. Reglas Técnicas y Problemas Evitados
+## 🛠️ Reglas Técnicas y Problemas Evitados
 
 La arquitectura elegida para la base de datos de PBL Shop cumple estrictamente con las **reglas de oro de un diseño relacional sano**, previniendo de manera nativa los siguientes problemas operativos:
 
